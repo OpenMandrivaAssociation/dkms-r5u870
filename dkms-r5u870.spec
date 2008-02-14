@@ -11,6 +11,7 @@ Source0: http://avilella.googlepages.com/%{module}-%{version}.tgz
 Patch0: r5u870-0.10.0-1837.patch
 License: GPL
 Group: System/Kernel and hardware
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Url: http://www.qbik.ch/usb/devices/showdr.php?id=247
 BuildArch: noarch
 Requires(post): dkms
