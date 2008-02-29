@@ -1,18 +1,17 @@
 %define module r5u870
 %define name dkms-%{module}
-%define version 0.10.0
+%define version 0.11.0
 %define release %mkrel 1
 
 Summary: Ricoh RY5U870 webcam driver 
 Name: %{name}
 Version: %{version}
 Release: %{release}
-Source0: http://avilella.googlepages.com/%{module}-%{version}.tgz
-Patch0: r5u870-0.10.0-1837.patch
+Source0: http://mediati.org/%{module}/%{module}-%{version}.tar.gz
 License: GPL
 Group: System/Kernel and hardware
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-Url: http://www.qbik.ch/usb/devices/showdr.php?id=247
+Url: http://wiki.mediati.org/R5u870
 BuildArch: noarch
 Requires(post): dkms
 Requires(preun): dkms
@@ -22,7 +21,6 @@ r5u870 is a driver for Ricoh RY5U870 webcams.
 
 %prep
 %setup -q -n %{module}-%{version}
-%patch0 -p1 -b .1837
 rm -f *.fw
 
 cat > dkms.conf <<EOF
