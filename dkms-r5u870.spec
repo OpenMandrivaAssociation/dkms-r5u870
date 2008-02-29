@@ -3,7 +3,7 @@
 %define version 0.11.0
 %define release %mkrel 1
 
-Summary: Ricoh RY5U870 webcam driver 
+Summary: Ricoh RY5U870 webcam driver
 Name: %{name}
 Version: %{version}
 Release: %{release}
