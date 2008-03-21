@@ -1,7 +1,7 @@
 %define module r5u870
 %define name dkms-%{module}
 %define version 0.11.0
-%define release %mkrel 1
+%define release %mkrel 2
 
 Summary: Ricoh RY5U870 webcam driver
 Name: %{name}
@@ -26,7 +26,11 @@ rm -f *.fw
 cat > dkms.conf <<EOF
 PACKAGE_NAME=%{name}
 PACKAGE_VERSION=%{version}-%{release}
-DEST_MODULE_LOCATION[0]="/kernel/drivers/media/video"
+BUILT_MODULE_NAME[0]=r5u870
+BUILT_MODULE_NAME[1]=usbcam
+BUILT_MODULE_LOCATION[1]=usbcam
+DEST_MODULE_LOCATION[0]=/kernel/drivers/media/video
+DEST_MODULE_LOCATION[1]=/kernel/drivers/media/video
 AUTOINSTALL=yes
 EOF
 
