@@ -1,13 +1,15 @@
 %define module r5u870
 %define name dkms-%{module}
 %define version 0.11.0
-%define release %mkrel 2
+%define release %mkrel 3
 
 Summary: Ricoh RY5U870 webcam driver
 Name: %{name}
 Version: %{version}
 Release: %{release}
 Source0: http://mediati.org/%{module}/%{module}-%{version}.tar.gz
+# Link to the parent, else hal will ignore it
+Patch0:	r5u870-0.11.0-set_device.patch
 License: GPL
 Group: System/Kernel and hardware
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
@@ -21,6 +23,9 @@ r5u870 is a driver for Ricoh RY5U870 webcams.
 
 %prep
 %setup -q -n %{module}-%{version}
+
+%patch0 -p1
+
 rm -f *.fw
 
 cat > dkms.conf <<EOF
@@ -31,6 +36,7 @@ BUILT_MODULE_NAME[1]=usbcam
 BUILT_MODULE_LOCATION[1]=usbcam
 DEST_MODULE_LOCATION[0]=/kernel/drivers/media/video
 DEST_MODULE_LOCATION[1]=/kernel/drivers/media/video
+MODULES_CONF_EXTRACT_ALIASES[0]=yes
 AUTOINSTALL=yes
 EOF
 
