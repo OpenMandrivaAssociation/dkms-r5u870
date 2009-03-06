@@ -1,7 +1,7 @@
 %define module r5u870
 %define name dkms-%{module}
 %define version 0.11.0
-%define release %mkrel 5
+%define release %mkrel 6
 
 Summary: Ricoh RY5U870 webcam driver
 Name: %{name}
