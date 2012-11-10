@@ -1,0 +1,11 @@
+--- r5u870-0.11.0/usbcam/usbcam_dev.c	2008-01-25 01:25:15.000000000 +0100
++++ r5u870-0.11.0/usbcam/usbcam_dev.c.new	2008-04-02 13:53:59.000000000 +0200
+@@ -260,6 +260,8 @@
+ 	 * We will assume no callback on failure.
+ 	 */
+ 
++	udp->ud_vdev.dev = &udp->ud_dev->dev;
++
+ 	if (udp->ud_vdev.minor != -1) {
+ 		/* Minidriver has indicated its preference for a minor */
+ 		res = video_register_device(&udp->ud_vdev, VFL_TYPE_GRABBER,
