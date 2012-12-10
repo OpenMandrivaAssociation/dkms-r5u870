@@ -65,3 +65,37 @@ set -x
 %files
 %defattr(-,root,root)
 /usr/src/%{module}-%{version}-%{release}
+
+
+%changelog
+* Fri Mar 06 2009 Antoine Ginies <aginies@mandriva.com> 0.11.0-6mdv2009.1
++ Revision: 350652
+- rebuild
+
+* Thu Jul 24 2008 Thierry Vignaud <tvignaud@mandriva.com> 0.11.0-5mdv2009.0
++ Revision: 244352
+- rebuild
+
+* Wed Apr 02 2008 Pascal Terjan <pterjan@mandriva.org> 0.11.0-3mdv2008.1
++ Revision: 191657
+- Link to the device, else hal will ignore it and rights will be wrong (#39182)
+- Add the aliases in /etc/modprobe.d/ so that it gets loaded instead of the generic uvcvideo (#39182 too)
+
+* Fri Mar 21 2008 Olivier Blin <oblin@mandriva.com> 0.11.0-2mdv2008.1
++ Revision: 189450
+- install usbcam module as well (#39182)
+
+* Fri Feb 29 2008 Olivier Blin <oblin@mandriva.com> 0.11.0-1mdv2008.1
++ Revision: 176724
+- 0.11.0
+- remove 1837 patch (better one upstream)
+- update URL
+
+  + Thierry Vignaud <tvignaud@mandriva.com>
+    - fix no-buildroot-tag
+
+* Mon Dec 03 2007 Olivier Blin <oblin@mandriva.com> 0.10.0-1mdv2008.1
++ Revision: 114630
+- initial r5u870 package
+- create dkms-r5u870
+
