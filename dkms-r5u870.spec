@@ -13,7 +13,7 @@ Patch0:	r5u870-0.11.0-set_device.patch
 License: GPL
 Group: System/Kernel and hardware
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-Url: http://wiki.mediati.org/R5u870
+Url: https://wiki.mediati.org/R5u870
 BuildArch: noarch
 Requires(post): dkms
 Requires(preun): dkms
